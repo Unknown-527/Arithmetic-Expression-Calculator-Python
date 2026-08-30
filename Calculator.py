@@ -9,6 +9,11 @@ def main():
     ch=input("Enter A for BODMAS or B for PEMDAS: ")
     if ch.lower()=="a":
         bodmas(expressionl)
+    elif ch.lower()=="b":
+        pemdas(expressionl)
+    else:
+        print("Wrong Choice")
+        
 def bodmas(n):
     for i in range(len(n)-1):
         if n[i]=="/":
@@ -19,6 +24,18 @@ def bodmas(n):
             a=addit(n)
         elif n[i]=="-":
             a=subit(n)
+
+def pemdas(n):
+    for i in range(len(n)-1):
+        if n[i]=="*":
+            a=div(n)
+        elif n[i]=="/":
+            a=pro(n)
+        elif n[i]=="+":
+            a=addit(n)
+        elif n[i]=="-":
+            a=subit(n)
+            
 def div(n):
     print("div")
 def pro(n):
